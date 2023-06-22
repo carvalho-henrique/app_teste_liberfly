@@ -1,0 +1,83 @@
+openapi: 3.0.0
+info:
+  title: API
+  version: 1.0.0
+paths:
+  /login:
+    post:
+      tags:
+        - user
+      summary: 'login a registered user'
+      operationId: login
+      requestBody:
+        description: 'Input data format'
+        content:
+          application/json:
+            schema:
+              properties:
+                email:
+                  description: 'The email of the user'
+                  type: string
+                password:
+                  description: 'The password of the user'
+                  type: string
+              type: object
+      responses:
+        '200':
+          description: 'Successfully activated'
+  /logout:
+    post:
+      tags:
+        - user
+      summary: 'logout a registered user'
+      operationId: logout
+      requestBody:
+        description: 'Input data format'
+        content:
+          application/json:
+            schema:
+              properties:
+                email:
+                  description: 'The email of the user'
+                  type: string
+                password:
+                  description: 'The password of the user'
+                  type: string
+              type: object
+      responses:
+        '200':
+          description: 'Successfully activated'
+  /api/user:
+    get:
+      description: 'Return all users'
+      operationId: 971db9bc974c0e607288cfe7ecc10096
+      responses:
+        '200':
+          description: OK
+        '422':
+          description: 'Missing Data'
+  '/api/user/{user}':
+    get:
+      description: 'Return user'
+      operationId: a0fa3a08f20fb611866a52d1bb2e43dd
+      responses:
+        '200':
+          description: OK
+        '422':
+          description: 'Missing Data'
+    delete:
+      description: 'Delete user'
+      operationId: 887f11e9971bf8f135d6acd66435514a
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: 'unable delete'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      name: bearerAuth
+      in: header
+      bearerFormat: JWT
+      scheme: bearer
