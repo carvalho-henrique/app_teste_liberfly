@@ -20,10 +20,13 @@ $ php artisan l5-swagger:generate
 $ php artisan serve
 ```
 Usuario de teste
+
 email: teste@teste.com
+
 senha: 1234
 
 Acesssar pela url: http://localhost:8000/
+
 Acesssar documentacao: http://localhost:8000/api/documentation/
 
 
